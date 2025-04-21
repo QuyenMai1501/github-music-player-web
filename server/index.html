@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous" />
+</head>
+
+<body>
+    
+    <style>
+        .navbar-gradient {
+            background: linear-gradient(45deg, #ff7eb3, #5e78ff, #81ffdb);
+            background-size: 300% 300%;
+            animation: gradientShift 6s infinite;
+        }
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            } 
+        }
+    </style>
+    <nav class="navbar navbar-gradient" >
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+          <a class="navbar-brand" href="/server/index.html">
+            <img src="/images/logo.png" alt="Logo" width="55">
+          </a>
+
+          
+          <ul class="navbar-nav d-none d-lg-flex flex-row me-auto" style="--bs-scroll-height: 100px;">
+            <li class="nav-item me-3">
+            <a class="nav-link active" style="font-size: 1.2rem;" aria-current="page" href="#">Player</a>
+            </li>
+            <li class="nav-item me-3">
+            <a class="nav-link active" style="font-size: 1.2rem;" href="#">Playlist</a>
+            </li>
+            <li class="nav-item me-3">
+            <a class="nav-link active" style="font-size: 1.2rem;" href="">Library</a>
+            </li>
+          </ul>
+
+
+          <form class="d-flex me-3" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+
+          <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" style="font-size: 1.2rem;" href="#">Player</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" style="font-size: 1.2rem href="#">Playlist</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" style="font-size: 1.2rem href="#">Library</a>
+                </li>
+            </ul>
+        </div>
+      </nav>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"></script>
+
+    <script>
+        window.addEventListener('resize', function() {
+            const navbarMenu = document.querySelector('#navbarScroll');
+            const smallMenus = document.querySelectorAll('.collapse');
+
+            // Kiểm tra nếu kích thước màn hình lớn hơn breakpoint (Bootstrap mặc định là 992px)
+            if (window.innerWidth >= 992) {
+                // Đóng tất cả các menu nhỏ
+                smallMenus.forEach(function(menu) {
+                menu.classList.remove('show');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
